@@ -13,9 +13,8 @@ export class AppComponent {
     { title: 'Buy milk', description: 'Go to the store and buy milk'},
     { title: 'Create a Kanban app', description: 'Using Firebase And angular create a Kanban app'}
   ];
-  inProgress: Task[] = [];
   done: Task[] = [];
-
+  inProgress: Task[] = [];
 
   editTask(list: string, task: Task): void{
 
