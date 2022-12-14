@@ -19,7 +19,8 @@
   <div class="container">
     <h2>In progress</h2>
     <mat-card
-      cdkDropList id="inProgress"
+      cdkDropList
+      id="inProgress"
       #inProgressList="cdkDropList"
       [cdkDropListData]="todo"
       [cdkDropListConnectedTo]="[todoList,doneList]"
@@ -31,7 +32,8 @@
   <div class="container">
     <h2>Done</h2>
     <mat-card
-      cdkDropList id="done"
+      cdkDropList
+      id="done"
       #doneList="cdkDropList"
       [cdkDropListData]="todo"
       [cdkDropListConnectedTo]="[todoList,doneList]"

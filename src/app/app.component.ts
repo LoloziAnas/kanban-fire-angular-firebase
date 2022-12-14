@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Task} from './task/task';
-import {transferArrayItem, CdkDragDrop} from "@angular/cdk/drag-drop";
+import {transferArrayItem, CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-root',
@@ -19,8 +19,9 @@ export class AppComponent {
   editTask(list: string, task: Task): void{
 
   }
-  drop(event: CdkDragDrop<Task[] | any>): void{
+  drop(event: CdkDragDrop<Task[]>): void{
     if(event.previousContainer === event.container){
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       return;
     }
     if (!event.container.data || !event.previousContainer.data){

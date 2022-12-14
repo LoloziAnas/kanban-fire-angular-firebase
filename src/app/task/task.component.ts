@@ -8,7 +8,7 @@ import {Task} from "./task";
 })
 export class TaskComponent implements OnInit {
 
-  @Input() task: Task | null = null;
+  @Input() task!: Task;
   @Output() edit = new EventEmitter<Task>();
 
   constructor() { }
