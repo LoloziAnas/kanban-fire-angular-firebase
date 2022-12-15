@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Task} from './task/task';
 import {transferArrayItem, CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
+import {MatDialog} from "@angular/material/dialog";
+import {TaskDialogComponent, TaskDialogResult} from "./task-dialog/task-dialog.component";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +18,12 @@ export class AppComponent {
   done: Task[] = [];
   inProgress: Task[] = [];
 
+  constructor(private dialog:MatDialog) {
+  }
+  newTask():void{
+    const dialogRef = this.dialog.open(TaskDialogComponent, {width: '270px', data: {task:{},},});
+    dialogRef.afterClosed().subscribe((result: TaskDialogResult)=>this.todo.push(result.task));
+  }
   editTask(list: string, task: Task): void{
 
   }
